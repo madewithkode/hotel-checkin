@@ -9,6 +9,7 @@ root = tk.Tk()
 root.title("Hotel Check-In") # title
 root.resizable(0, 0) # if you want it resizeable, just remove this whole line
 
+# create variables to hold string inputs 
 firstname_sv = tk.StringVar()
 lastname_sv = tk.StringVar()
 id_sv = tk.StringVar()
@@ -16,6 +17,7 @@ age_sv = tk.StringVar()
 phone_sv = tk.StringVar()
 checkindate_sv = tk.StringVar()
 
+#create lists for the following items
 firstnameList = []
 lastnameList = []
 idList = []
@@ -23,7 +25,7 @@ ageList = []
 phoneList = []
 checkindateList = []
 
-
+#function to clear entry fields
 def onReset(*event):
     firstname_sv.set("")
     lastname_sv.set("")
@@ -32,7 +34,7 @@ def onReset(*event):
     phone_sv.set("")
     checkindate_sv.set(strftime('%d.%m.%Y - %I:%M:%S'))
 
-
+#on submit items are added to list
 def onSubmit(*event):
     firstname = firstname_sv.get()
     lastname = lastname_sv.get()
@@ -65,7 +67,7 @@ def onSubmit(*event):
     print("---------------------------------------------------------------------")
 
 
-def showCheckin():
+def showCheckin():#show all checked-in customers
     root2 = tk.Tk()
     root2.title("All Users")
     root2.resizable(0, 0)
@@ -91,7 +93,7 @@ def showCheckin():
     root2.mainloop()
 
 
-def createMenu(): # Modification started from here
+def createMenu(): # create a menu
     menubar = tk.Menu(root)
     root.config(menu=menubar)
 
